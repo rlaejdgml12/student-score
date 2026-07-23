@@ -9,7 +9,7 @@ public class HonorStudent extends Student {
     public HonorStudent(String name, int korScore, int mathScore, int engScore) {
         super(name, korScore, mathScore, engScore);
     }
-
+    @Override
     public void introduce(){
         System.out.println("이름 : " + getName() + "(장학생), 평균 : " + getAverage());
     }
