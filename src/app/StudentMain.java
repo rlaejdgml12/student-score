@@ -3,13 +3,15 @@ package app;
 import domain.HonorStudent;
 import domain.Student;
 import domain.StudentFactory;
+import domain.StudentManager;
 
 public class StudentMain {
     public static void main(String[] args) {
-        Student student1 = StudentFactory.create("홍길동", 80, 75, 88);
-        Student student2 = StudentFactory.create("김동희", 90, 95, 89);
+        StudentManager manager = new StudentManager();
 
-        student1.introduce();
-        student2.introduce();
+        manager.addStudent(StudentFactory.create("홍길동", 80, 75, 88));
+        manager.addStudent(StudentFactory.create("김동희", 90, 95, 89));
+        manager.printAll();
+        System.out.println("학급 전체 평균 : " + manager.getClassAverage());
     }
 }
