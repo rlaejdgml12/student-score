@@ -52,4 +52,9 @@ public class Student {
     public double getAverage(){
         return getTotal() / 3.0;
     }
+
+    public void introduce(){
+        System.out.println("이름 : " + name + ", 평균 : " + getAverage());
+    }
 }
+
