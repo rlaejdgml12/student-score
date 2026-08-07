@@ -8,7 +8,7 @@ public class ScienceTrackStudent extends Student {
     @Override
     public int totalScore(){
         int kor = this.getKorScore();
-        int math = Math.min((int)(this.getMathScore()*1.1), 100);
+        int math = Math.min((int)(this.getMathScore()*1.1), MAX_SCORE);
         int eng = this.getEngScore();
         return kor + math + eng;
     }

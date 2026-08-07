@@ -1,10 +1,14 @@
 package studentscore.domain;
 
 public class Student {
-    private String name;
-    private int korScore;
-    private int mathScore;
-    private int engScore;
+    private final String name;
+    private final int korScore;
+    private final int mathScore;
+    private final int engScore;
+
+    public static final int SUBJECT_COUNT = 3;
+    public static final int MAX_SCORE = 100;
+    public static final int SCHOLARSHIP_THRESHOLD = 280;
 
     public Student(String name, int korScore, int mathScore, int engScore) {
         this.name = name;
@@ -34,10 +38,10 @@ public class Student {
     }
 
     public double averageScore() {
-        return this.totalScore() / 3.0;
+        return this.totalScore() / (double)SUBJECT_COUNT;
     }
 
     public boolean isScholarship(){
-        return this.totalScore() >= 280;
+        return this.totalScore() >= SCHOLARSHIP_THRESHOLD;
     }
 }
