@@ -1,4 +1,6 @@
-package studentscore;
+package studentscore.app;
+
+import studentscore.domain.Student;
 
 public class StudentMain {
     public static void main(String[] args) {
@@ -9,7 +11,7 @@ public class StudentMain {
         students[2] = new Student("유리", 80, 100, 100);
 
         for(int i = 0; i < students.length; i++){
-            System.out.println("이름 : " + students[i].name + ", 총점 : " + students[i].totalScore() + ", 평균 : " + students[i].averageScore());
+            System.out.println("이름 : " + students[i].getName() + ", 총점 : " + students[i].totalScore() + ", 평균 : " + students[i].averageScore());
         }
     }
 }
