@@ -10,8 +10,19 @@ public class StudentMain {
         students[1] = new ScienceTrackStudent("철수", 85, 100, 94);
         students[2] = new HumanitiesTrackStudent("유리", 80, 100, 100);
 
+        ReportPrinter printer = new SimpleReportPrinter();
+        ReportService service = new ReportService(printer);
+
         for(int i = 0; i < students.length; i++){
-            System.out.println("이름 : " + students[i].getName() + ", 총점 : " + students[i].totalScore() + ", 평균 : " + students[i].averageScore()+ ", 장학생 여부 : " + students[i].isScholarship());
+            service.printReport(students[i]);
         }
+
+        ReportPrinter printer1 = new DetailedReportPrinter();
+        ReportService service1 = new ReportService(printer1);
+
+        for(int i = 0; i < students.length; i++){
+            service1.printReport(students[i]);
+        }
+
     }
 }
