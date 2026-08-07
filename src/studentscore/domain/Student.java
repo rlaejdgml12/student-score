@@ -36,4 +36,8 @@ public class Student {
     public double averageScore() {
         return this.totalScore() / 3.0;
     }
+
+    public boolean isScholarship(){
+        return this.totalScore() >= 280;
+    }
 }
