@@ -1,22 +1,29 @@
 package studentscore.domain;
 
 import java.util.Objects;
+import java.util.List;
 
 public class Student {
     private final String name;
     private final int korScore;
     private final int mathScore;
     private final int engScore;
+    private final List<String> subjects;
 
     public static final int SUBJECT_COUNT = 3;
     public static final int MAX_SCORE = 100;
     public static final int SCHOLARSHIP_THRESHOLD = 280;
 
-    public Student(String name, int korScore, int mathScore, int engScore) {
+    public Student(String name, int korScore, int mathScore, int engScore){
+        this(name, korScore, mathScore, engScore, List.of("국어", "수학", "영어"));
+    }
+
+    public Student(String name, int korScore, int mathScore, int engScore, List<String> subjects) {
         this.name = name;
         this.korScore = korScore;
         this.mathScore = mathScore;
         this.engScore = engScore;
+        this.subjects = List.copyOf(subjects);
     }
 
     public String getName(){
@@ -33,6 +40,10 @@ public class Student {
 
     public int getEngScore(){
         return this.engScore;
+    }
+
+    public List<String> getSubjects(){
+        return this.subjects;
     }
 
     public int totalScore() {
