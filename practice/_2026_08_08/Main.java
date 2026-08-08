@@ -2,7 +2,7 @@ package _2026_08_08;
 
 import java.util.HashSet;
 import java.util.Set;
-import studentscore.domain.Student;
+import studentscore.domain.student.Student;
 
 public class Main {
     public static void main(String[] args) {
