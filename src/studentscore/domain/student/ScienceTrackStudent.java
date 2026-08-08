@@ -1,4 +1,4 @@
-package studentscore.domain;
+package studentscore.domain.student;
 
 public class ScienceTrackStudent extends Student {
     public ScienceTrackStudent(String name, int korScore, int mathScore, int engScore){

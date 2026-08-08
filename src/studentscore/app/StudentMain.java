@@ -1,6 +1,12 @@
 package studentscore.app;
 
-import studentscore.domain.*;
+import studentscore.domain.printer.DetailedReportPrinter;
+import studentscore.domain.printer.ReportPrinter;
+import studentscore.domain.printer.ReportService;
+import studentscore.domain.printer.SimpleReportPrinter;
+import studentscore.domain.student.HumanitiesTrackStudent;
+import studentscore.domain.student.ScienceTrackStudent;
+import studentscore.domain.student.Student;
 
 public class StudentMain {
     public static void main(String[] args) {

@@ -1,4 +1,6 @@
-package studentscore.domain;
+package studentscore.domain.printer;
+
+import studentscore.domain.student.Student;
 
 public class SimpleReportPrinter implements ReportPrinter {
     @Override

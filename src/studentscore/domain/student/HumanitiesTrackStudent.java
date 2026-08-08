@@ -1,6 +1,6 @@
-package studentscore.domain;
+package studentscore.domain.student;
 
-public class HumanitiesTrackStudent extends Student{
+public class HumanitiesTrackStudent extends Student {
     public HumanitiesTrackStudent(String name, int korScore, int mathScore, int engScore){
         super(name, korScore, mathScore, engScore);
     }
