@@ -8,7 +8,10 @@ import studentscore.domain.student.HumanitiesTrackStudent;
 import studentscore.domain.student.ScienceTrackStudent;
 import studentscore.domain.student.Student;
 import studentscore.domain.student.StudentFileReader;
+import studentscore.domain.student.Grade;
+import studentscore.domain.student.StudentRanking;
 
+import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +32,18 @@ public class StudentMain {
 
         for(int i = 0; i < students.size(); i++){
             service1.printReport(students.get(i));
+        }
+
+        System.out.println("===== 성적 순위 =====");
+        List<Student> ranked = StudentRanking.rankByAverage(students);
+        for (int i = 0; i < ranked.size(); i++) {
+            System.out.println((i + 1) + "등 " + ranked.get(i));
+        }
+
+        System.out.println("===== 등급별 =====");
+        Map<Grade, List<Student>> byGrade = StudentRanking.groupByGrade(students);
+        for (Grade grade : byGrade.keySet()) {
+            System.out.println(grade + " : " + byGrade.get(grade));
         }
 
     }

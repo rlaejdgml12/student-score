@@ -75,5 +75,9 @@ public class Student {
         return Objects.hash(name, korScore, mathScore, engScore);
     }
 
+    @Override
+    public String toString(){
+        return name + "(" + String.format("%.1f", this.averageScore()) + ")";
+    }
 
 }
